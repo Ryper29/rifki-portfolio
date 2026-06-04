@@ -1,2 +1,0 @@
-Taruh screenshot project OJS di folder ini.
-Format nama: 01-homepage.png, 02-dashboard.png, dst.
