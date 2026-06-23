@@ -1,10 +1,4 @@
-/* =============================================
-   script.js — Portfolio JavaScript
-   ============================================= */
-
-// =============================================
-// 1. DARK MODE (runs first, before render)
-// =============================================
+/* Dark Mode */
 const DARK_KEY = 'ryp-dark-mode';
 
 function applyTheme(dark) {
@@ -13,11 +7,9 @@ function applyTheme(dark) {
   if (btn) btn.textContent = dark ? '☀️' : '🌙';
 }
 
-// Apply saved preference immediately
 const savedDark = localStorage.getItem(DARK_KEY) === 'true';
 applyTheme(savedDark);
 
-// Toggle handler (set up after DOM ready)
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('theme-toggle');
   if (btn) {
@@ -29,9 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// =============================================
-// 2. NAVBAR SCROLL STATE
-// =============================================
+/* Navbar */
 const navbar = document.getElementById('navbar');
 if (navbar) {
   window.addEventListener('scroll', () => {
@@ -41,9 +31,7 @@ if (navbar) {
   });
 }
 
-// =============================================
-// 3. HAMBURGER MENU
-// =============================================
+/* Hamburger Menu */
 const hamburger    = document.getElementById('hamburger');
 const mobileDrawer = document.getElementById('mobile-drawer');
 
@@ -61,9 +49,7 @@ if (hamburger && mobileDrawer) {
   });
 }
 
-// =============================================
-// 4. ACTIVE NAV LINK ON SCROLL
-// =============================================
+/* Active Nav on Scroll */
 const sections = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-link');
 
@@ -81,9 +67,7 @@ if (sections.length && navLinks.length) {
   sections.forEach(s => obs.observe(s));
 }
 
-// =============================================
-// 5. SCROLL REVEAL
-// =============================================
+/* Scroll Reveal */
 const reveals = document.querySelectorAll('.reveal');
 if (reveals.length) {
   const ro = new IntersectionObserver((entries) => {
@@ -97,9 +81,7 @@ if (reveals.length) {
   reveals.forEach(el => ro.observe(el));
 }
 
-// =============================================
-// 6. SMOOTH SCROLL
-// =============================================
+/* Smooth Scroll */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
     const target = document.querySelector(anchor.getAttribute('href'));
@@ -111,21 +93,59 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// =============================================
-// 7. CONTACT FORM SIMULATION
-// =============================================
-const form    = document.getElementById('contact-form');
-const sendBtn = document.getElementById('send-btn');
+/* Form Validation */
+const form     = document.getElementById('contact-form');
+const sendBtn  = document.getElementById('send-btn');
+const errorMsg = document.getElementById('form-error-msg');
+
 if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    const nameInput  = document.getElementById('cf-name').value.trim();
+    const emailInput = document.getElementById('cf-email').value.trim();
+    const msgInput   = document.getElementById('cf-msg').value.trim();
+
+    if (nameInput === '' || emailInput === '' || msgInput === '') {
+      errorMsg.innerText = 'Peringatan: Seluruh form wajib diisi sebelum dikirim!';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    errorMsg.style.display = 'none';
     sendBtn.textContent = 'Sending...';
     sendBtn.disabled = true;
+
     setTimeout(() => {
       alert('✅ Pesan berhasil dikirim secara simulasi.\n\nTerima kasih! Rifki akan segera merespons.');
       form.reset();
       sendBtn.textContent = 'Send Message';
       sendBtn.disabled = false;
     }, 800);
+  });
+}
+
+/* Project Filter */
+const filterBtns   = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+if (filterBtns.length && projectCards.length) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        if (filterValue === 'all' || card.classList.contains(filterValue)) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   });
 }

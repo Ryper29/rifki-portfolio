@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<!-- ========== NAVBAR ========== -->
+<!-- Navbar -->
 <nav id="navbar" class="navbar">
   <div class="container navbar-inner">
     <a href="#home" class="brand">Rifki <span>Yudika</span></a>
@@ -42,7 +42,7 @@
   </div>
 </nav>
 
-<!-- ========== HERO ========== -->
+<!-- Hero -->
 <section id="home" class="section hero">
   <div class="container hero-grid">
     <div class="hero-left reveal">
@@ -70,7 +70,7 @@
   </div>
 </section>
 
-<!-- ========== ABOUT ========== -->
+<!-- About -->
 <section id="about" class="section alt-bg">
   <div class="container">
     <div class="section-head reveal">
@@ -102,7 +102,7 @@
   </div>
 </section>
 
-<!-- ========== SKILLS ========== -->
+<!-- Skills -->
 <section id="skills" class="section">
   <div class="container">
     <div class="section-head reveal">
@@ -135,16 +135,21 @@
   </div>
 </section>
 
-<!-- ========== PROJECTS ========== -->
+<!-- Projects -->
 <section id="projects" class="section alt-bg">
   <div class="container">
     <div class="section-head reveal">
       <span class="section-label">Projects</span>
       <h2 class="section-title">My Projects</h2>
     </div>
+    <div class="filter-container reveal">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="web">Web Dev</button>
+      <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
+    </div>
     <div class="projects-grid">
 
-      <div class="project-card reveal">
+      <div class="project-card reveal web">
         <h3 class="pc-title">Academic Journal Website</h3>
         <p class="pc-sub">Open Journal Systems</p>
         <p class="pc-desc">Managed and configured a journal website using Open Journal Systems as a web-based academic publication platform. This project involved installation, system configuration, user management, and interface customization.</p>
@@ -155,7 +160,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card reveal web">
         <h3 class="pc-title">Gaming Lounge Booking System</h3>
         <p class="pc-sub">Web-Based Management</p>
         <p class="pc-desc">Developed a web-based system using Laravel to support room management, transactions, and self-service booking for a Gaming Lounge. The system includes Admin and Customer roles, VIP/VVIP room selection, and automatic price calculation.</p>
@@ -166,7 +171,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card reveal uiux">
         <h3 class="pc-title">DocTime</h3>
         <p class="pc-sub">UI/UX Mobile App Design</p>
         <p class="pc-desc">Designed a mobile application mockup focused on appointment scheduling and healthcare-related user flow. The design emphasizes clean layout, simple navigation, and user-friendly interaction.</p>
@@ -176,7 +181,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div class="project-card reveal uiux">
         <h3 class="pc-title">TripMate</h3>
         <p class="pc-sub">UI/UX Travel App Design</p>
         <p class="pc-desc">Designed a travel application mockup focused on trip planning, destination discovery, and user-friendly travel experience. The design emphasizes visual hierarchy, usability, and clean interface structure.</p>
@@ -190,7 +195,7 @@
   </div>
 </section>
 
-<!-- ========== EXPERIENCE ========== -->
+<!-- Experience -->
 <section id="experience" class="section">
   <div class="container">
     <div class="section-head reveal">
@@ -248,7 +253,7 @@
   </div>
 </section>
 
-<!-- ========== CONTACT ========== -->
+<!-- Contact -->
 <section id="contact" class="section alt-bg">
   <div class="container">
     <div class="section-head reveal">
@@ -288,13 +293,14 @@
           <label for="cf-msg">Message</label>
           <textarea id="cf-msg" name="message" rows="5" placeholder="Write your message here..." required></textarea>
         </div>
+        <p id="form-error-msg" style="display: none; color: #ef4444; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;"></p>
         <button type="submit" class="btn btn-primary" id="send-btn">Send Message</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- Footer -->
 <footer class="footer">
   <div class="container footer-inner">
     <p class="footer-text">© 2026 Rifki Yudika Perdana. All rights reserved.</p>
