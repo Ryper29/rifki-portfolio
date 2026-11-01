@@ -93,13 +93,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* Form Validation */
+/* Form Submit with FormSubmit */
 const form     = document.getElementById('contact-form');
 const sendBtn  = document.getElementById('send-btn');
 const errorMsg = document.getElementById('form-error-msg');
 
+function showToast(message, isError = false) {
+  const toast = document.createElement('div');
+  toast.textContent = message;
+  toast.style.cssText = `
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 14px 22px;
+    border-radius: 10px;
+    background: ${isError ? '#ef4444' : '#22c55e'};
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+  `;
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    toast.style.animation = 'slideIn 0.3s ease reverse';
+    setTimeout(() => toast.remove(), 300);
+  }, 4000);
+}
+
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const nameInput  = document.getElementById('cf-name').value.trim();
@@ -113,15 +145,29 @@ if (form) {
     }
 
     errorMsg.style.display = 'none';
-    sendBtn.textContent = 'Sending...';
+    sendBtn.textContent = 'Mengirim...';
     sendBtn.disabled = true;
 
-    setTimeout(() => {
-      alert('✅ Pesan berhasil dikirim secara simulasi.\n\nTerima kasih! Rifki akan segera merespons.');
-      form.reset();
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        showToast('✅ Pesan terkirim! Saya akan membalas segera.');
+        form.reset();
+      } else {
+        throw new Error('Gagal mengirim');
+      }
+    } catch (err) {
+      showToast('❌ Gagal mengirim. Coba lagi nanti.', true);
+    } finally {
       sendBtn.textContent = 'Send Message';
       sendBtn.disabled = false;
-    }, 800);
+    }
   });
 }
 
