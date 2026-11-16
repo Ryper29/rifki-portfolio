@@ -1,0 +1,29 @@
+<svg width="2145" height="1777" viewBox="0 0 2145 1777" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_147_74)">
+<path d="M1985.2 616.847C2057.58 789.968 1707.55 1051.84 1203.39 1201.76C699.234 1351.67 231.857 1332.86 159.478 1159.74C87.099 986.621 437.125 724.748 941.284 574.831C1445.44 424.915 1912.82 443.726 1985.2 616.847ZM1112.06 1116.46C1439.73 1019.03 1669.48 854.244 1625.23 748.406C1580.98 642.569 1279.49 635.756 951.823 733.19C624.159 830.624 394.405 995.408 438.654 1101.25C482.903 1207.08 784.4 1213.9 1112.06 1116.46Z" fill="url(#paint0_radial_147_74)"/>
+</g>
+<path d="M1985.2 616.847C2057.58 789.968 1707.55 1051.84 1203.39 1201.76C699.234 1351.67 231.857 1332.86 159.478 1159.74C87.099 986.621 437.125 724.748 941.284 574.831C1445.44 424.915 1912.82 443.726 1985.2 616.847ZM1112.06 1116.46C1439.73 1019.03 1669.48 854.244 1625.23 748.406C1580.98 642.569 1279.49 635.756 951.823 733.19C624.159 830.624 394.405 995.408 438.654 1101.25C482.903 1207.08 784.4 1213.9 1112.06 1116.46Z" fill="url(#paint1_radial_147_74)"/>
+<defs>
+<filter id="filter0_f_147_74" x="0" y="323.628" width="2144.68" height="1129.33" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="75" result="effect1_foregroundBlur_147_74"/>
+</filter>
+<radialGradient id="paint0_radial_147_74" cx="0" cy="0" r="1" gradientTransform="matrix(-1135.78 294.401 -574.654 -1362.74 1276.33 842.742)" gradientUnits="userSpaceOnUse">
+<stop offset="0.0766016"/>
+<stop offset="0.295658" stop-color="#5B0400"/>
+<stop offset="0.439639" stop-color="#910601"/>
+<stop offset="0.64005" stop-color="#C10801"/>
+<stop offset="0.893048" stop-color="#F16001"/>
+<stop offset="1" stop-color="#D9C3AB"/>
+</radialGradient>
+<radialGradient id="paint1_radial_147_74" cx="0" cy="0" r="1" gradientTransform="matrix(-1135.78 294.401 -574.654 -1362.74 1276.33 842.742)" gradientUnits="userSpaceOnUse">
+<stop offset="0.0766016"/>
+<stop offset="0.295658" stop-color="#5B0400"/>
+<stop offset="0.439639" stop-color="#910601"/>
+<stop offset="0.64005" stop-color="#C10801"/>
+<stop offset="0.893048" stop-color="#F16001"/>
+<stop offset="1" stop-color="#D9C3AB"/>
+</radialGradient>
+</defs>
+</svg>
