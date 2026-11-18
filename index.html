@@ -1,352 +1,697 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rifki Yudika Perdana | Portfolio</title>
-  <meta name="description" content="Portfolio pribadi Rifki Yudika Perdana, mahasiswa Teknik Informatika Universitas Lampung." />
-  <meta name="author" content="Rifki Yudika Perdana" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Rifki Yudika Perdana | Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Rifki Yudika Perdana, Informatics Engineering student at Universitas Lampung."
+    />
+    <meta name="author" content="Rifki Yudika Perdana" />
+    <meta name="theme-color" content="#090807" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<!-- Navbar -->
-<nav id="navbar" class="navbar">
-  <div class="container navbar-inner">
-    <a href="#home" class="brand">Rifki <span>Yudika</span></a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#home"       class="nav-link active" data-section="home">Home</a></li>
-      <li><a href="#about"      class="nav-link" data-section="about">About</a></li>
-      <li><a href="#skills"     class="nav-link" data-section="skills">Skills</a></li>
-      <li><a href="#projects"   class="nav-link" data-section="projects">Projects</a></li>
-      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-      <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
-    </ul>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="mobile-drawer" id="mobile-drawer">
-    <ul>
-      <li><a href="#home"       class="mob-link">Home</a></li>
-      <li><a href="#about"      class="mob-link">About</a></li>
-      <li><a href="#skills"     class="mob-link">Skills</a></li>
-      <li><a href="#projects"   class="mob-link">Projects</a></li>
-      <li><a href="#experience" class="mob-link">Experience</a></li>
-      <li><a href="#contact"    class="mob-link">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rifki Yudika Perdana | Portfolio" />
+    <meta
+      property="og:description"
+      content="Portfolio of Rifki Yudika Perdana, Informatics Engineering student at Universitas Lampung."
+    />
+    <meta property="og:url" content="https://rifki-portfolio-phi.vercel.app/" />
+    <meta property="og:image" content="https://rifki-portfolio-phi.vercel.app/assets/images/profile.PNG" />
 
-<!-- Hero -->
-<section id="home" class="section hero">
-  <div class="container hero-grid">
-    <div class="hero-left reveal">
-      <p class="hero-eyebrow">Informatics Engineering Student</p>
-      <h1 class="hero-title">Hi, I'm <span>Rifki Yudika Perdana</span></h1>
-      <p class="hero-desc">
-        A 5th semester Informatics Engineering student at Universitas Lampung with an interest in software engineering, databases, and web development. I enjoy building structured digital solutions and improving my skills through academic projects and organizational experiences.
-      </p>
-      <div class="hero-meta">
-        <span>🏛 Universitas Lampung</span>
-        <span>📍 Bandar Lampung</span>
-        <span>📖 5th Semester</span>
-        <span>⭐ GPA 3.67 / 4.00</span>
-      </div>
-      <div class="hero-btns">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="assets/CV_Rifki_Yudika_Perdana.pdf" class="btn btn-outline" download>Download CV</a>
-        <a href="#contact" class="btn btn-ghost">Contact Me</a>
-      </div>
-    </div>
-    <!-- Profile photo -->
-    <div class="hero-avatar reveal">
-      <img src="assets/images/profile.PNG" alt="Rifki Yudika Perdana" />
-    </div>
-  </div>
-</section>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Rifki Yudika Perdana | Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Rifki Yudika Perdana, Informatics Engineering student at Universitas Lampung."
+    />
+    <meta name="twitter:image" content="https://rifki-portfolio-phi.vercel.app/assets/images/profile.PNG" />
 
-<!-- About -->
-<section id="about" class="section alt-bg">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-label">About Me</span>
-      <h2 class="section-title">Get to Know Me</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>I am a 5th semester Informatics Engineering student at Universitas Lampung. I have an interest in software engineering, database systems, and web development. I am detail-oriented, adaptable, and comfortable working in a team. Through academic projects and campus organizations, I continue to develop my technical, communication, and problem-solving skills.</p>
-        <p>I'm committed to continuous learning and applying my knowledge in real-world projects. I believe in building clean, structured, and purposeful solutions that solve actual problems.</p>
-        <div class="social-links">
-          <a href="https://github.com/Ryper29" class="social-btn" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.52 11.52 0 0 1 12 6.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-            GitHub — Ryper29
-          </a>
-          <a href="https://www.linkedin.com/in/rifki-yudika-perdana" class="social-btn" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn — rifki-yudika-perdana
-          </a>
-        </div>
-      </div>
-      <div class="about-stats reveal">
-        <div class="stat-card"><span class="sc-label">University</span><span class="sc-val">Universitas Lampung</span></div>
-        <div class="stat-card"><span class="sc-label">Study Program</span><span class="sc-val">Informatics Engineering</span></div>
-        <div class="stat-card"><span class="sc-label">Semester</span><span class="sc-val">5th Semester</span></div>
-        <div class="stat-card"><span class="sc-label">GPA</span><span class="sc-val blue">3.67 / 4.00</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <link rel="canonical" href="https://rifki-portfolio-phi.vercel.app/" />
 
-<!-- Skills -->
-<section id="skills" class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-label">Expertise</span>
-      <h2 class="section-title">Skills &amp; Tools</h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card reveal">
-        <h3 class="sk-title">Programming &amp; Database</h3>
-        <ul class="sk-list">
-          <li>C++</li><li>Java</li><li>SQL</li>
-          <li>Basic Python</li><li>Basic HTML/CSS</li><li>Basic PHP/Laravel</li>
-        </ul>
-      </div>
-      <div class="skill-card reveal">
-        <h3 class="sk-title">Tools</h3>
-        <ul class="sk-list">
-          <li>MySQL</li><li>GitHub</li><li>Visual Studio Code</li>
-          <li>Google Colab</li><li>Canva</li><li>Figma</li>
-        </ul>
-      </div>
-      <div class="skill-card reveal">
-        <h3 class="sk-title">Soft Skills</h3>
-        <ul class="sk-list">
-          <li>Teamwork</li><li>Problem Solving</li><li>Attention to Detail</li>
-          <li>Adaptability</li><li>Communication</li><li>Responsibility</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rifki Yudika Perdana",
+        "url": "https://rifki-portfolio-phi.vercel.app/",
+        "image": "https://rifki-portfolio-phi.vercel.app/assets/images/profile.PNG",
+        "jobTitle": "Web Developer",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Universitas Lampung"
+        },
+        "sameAs": [
+          "https://github.com/Ryper29",
+          "https://www.linkedin.com/in/rifki-yudika-perdana"
+        ]
+      }
+    </script>
 
-<!-- Projects -->
-<section id="projects" class="section alt-bg">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-label">Projects</span>
-      <h2 class="section-title">My Projects</h2>
-    </div>
-    <div class="filter-container reveal">
-      <button class="filter-btn active" data-filter="all">Semua</button>
-      <button class="filter-btn" data-filter="web">Web Dev</button>
-      <button class="filter-btn" data-filter="uiux">UI/UX Design</button>
-    </div>
-    <div class="projects-grid">
-
-      <div class="project-card reveal web">
-        <h3 class="pc-title">Academic Journal Website</h3>
-        <p class="pc-sub">Open Journal Systems</p>
-        <p class="pc-desc">Managed and configured a journal website using Open Journal Systems as a web-based academic publication platform. This project involved installation, system configuration, user management, and interface customization.</p>
-        <div class="pc-tags"><span>OJS</span><span>PHP</span><span>Web Administration</span></div>
-        <div class="pc-actions">
-          <a href="ojs-gallery.html" class="btn-sm btn-sm-outline">View Gallery</a>
-          <a href="https://github.com/Ryper29/OJS-Medtechno-Open-Journal-System-" class="btn-sm btn-sm-ghost" target="_blank" rel="noopener">Source Code</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal uiux">
-        <h3 class="pc-title">Waroeng Huwi</h3>
-        <p class="pc-sub">Restaurant Ordering UI/UX Design</p>
-        <p class="pc-desc">Designed a restaurant ordering experience for browsing menu items, customizing dishes, adding special requests, and confirming an order through a clear checkout flow.</p>
-        <div class="pc-tags"><span>UI/UX</span><span>Food Ordering</span><span>Figma</span></div>
-        <div class="pc-actions">
-          <a href="waroeng-huwi-gallery.html" class="btn-sm btn-sm-outline">View Gallery</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal web">
-        <h3 class="pc-title">Gaming Lounge Booking System</h3>
-        <p class="pc-sub">Web-Based Management</p>
-        <p class="pc-desc">Developed a web-based system using Laravel to support room management, transactions, and self-service booking for a Gaming Lounge. The system includes Admin and Customer roles, VIP/VVIP room selection, and automatic price calculation.</p>
-        <div class="pc-tags"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>Tailwind CSS</span></div>
-        <div class="pc-actions">
-          <a href="gaming-lounge-gallery.html" class="btn-sm btn-sm-outline">View Gallery</a>
-          <a href="https://github.com/Ryper29/Sistem-Manajemen-dan-Booking-Gaming-Lounge" class="btn-sm btn-sm-ghost" target="_blank" rel="noopener">Source Code</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal uiux">
-        <h3 class="pc-title">DocTime</h3>
-        <p class="pc-sub">UI/UX Mobile App Design</p>
-        <p class="pc-desc">Designed a mobile application mockup focused on appointment scheduling and healthcare-related user flow. The design emphasizes clean layout, simple navigation, and user-friendly interaction.</p>
-        <div class="pc-tags"><span>Figma</span><span>UI/UX</span><span>Mobile App</span><span>Prototype</span></div>
-        <div class="pc-actions">
-          <a href="doctime-gallery.html" class="btn-sm btn-sm-outline">View Gallery</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal uiux">
-        <h3 class="pc-title">TripMate</h3>
-        <p class="pc-sub">UI/UX Travel App Design</p>
-        <p class="pc-desc">Designed a travel application mockup focused on trip planning, destination discovery, and user-friendly travel experience. The design emphasizes visual hierarchy, usability, and clean interface structure.</p>
-        <div class="pc-tags"><span>Figma</span><span>UI/UX</span><span>Travel App</span><span>Prototype</span></div>
-        <div class="pc-actions">
-          <a href="tripmate-gallery.html" class="btn-sm btn-sm-outline">View Gallery</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Experience -->
-<section id="experience" class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-label">Experience</span>
-      <h2 class="section-title">Experience &amp; Training</h2>
-    </div>
-
-    <p class="exp-sub-title reveal">Organizations</p>
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta">
-            <span class="tl-period">Jan 2026 – Present</span>
-            <span class="tl-org">UKM-U GRADIEN, Universitas Lampung</span>
+    <script>
+      (() => {
+        const r = document.documentElement,
+          f = () =>
+            r.style.setProperty(
+              "--z",
+              innerWidth >= 1000 ? Math.min(r.clientWidth / 1440, 1.8) : 1,
+            );
+        f();
+        addEventListener("resize", f);
+        addEventListener("load", f);
+      })();
+    </script>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <a class="skip" href="#about">Lewati ke konten</a>
+    <main class="stage">
+      <div class="sc" style="height: 2000px">
+        <img
+          class="art a-pa"
+          alt=""
+          aria-hidden="true"
+          src="assets/art/planet-a.webp"
+          style="left: 262px; top: 0; width: 1415px; height: 443px"
+        />
+        <section id="home" class="sx" style="top: 0; height: 980px">
+          <nav
+            class="nav g ab"
+            style="--x: 41; --y: 65"
+            aria-label="Navigasi utama"
+          >
+            <a href="#home" class="on">home</a><a href="#about">profile</a
+            ><a href="#skills">skills</a><a href="#projects">project</a
+            ><a href="#experience">experience</a><a href="#contact">contact</a>
+          </nav>
+          <p class="up ab" style="--x: 47; --y: 343">updated</p>
+          <h1 class="ttl ab" style="--x: 46; --y: 391">
+            <svg viewBox="46 391 1231 155" role="img" aria-label="Portfolio">
+              <defs>
+                <linearGradient
+                  id="gt"
+                  gradientUnits="userSpaceOnUse"
+                  x1="670"
+                  y1="393"
+                  x2="670"
+                  y2="704"
+                >
+                  <stop stop-color="#fff" />
+                  <stop offset=".403846" stop-color="#4C4C4C" />
+                  <stop offset=".750308" stop-color="#F16001" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M161.355 441.66C161.355 450.403 159.348 458.43 155.335 465.74C151.322 472.907 145.158 478.712 136.845 483.155C128.532 487.598 118.212 489.82 105.885 489.82H83.095V544H46.33V393.07H105.885C117.925 393.07 128.102 395.148 136.415 399.305C144.728 403.462 150.963 409.195 155.12 416.505C159.277 423.815 161.355 432.2 161.355 441.66ZM103.09 460.58C110.113 460.58 115.345 458.932 118.785 455.635C122.225 452.338 123.945 447.68 123.945 441.66C123.945 435.64 122.225 430.982 118.785 427.685C115.345 424.388 110.113 422.74 103.09 422.74H83.095V460.58H103.09ZM251.875 545.505C237.685 545.505 224.642 542.208 212.745 535.615C200.992 529.022 191.603 519.848 184.58 508.095C177.7 496.198 174.26 482.868 174.26 468.105C174.26 453.342 177.7 440.083 184.58 428.33C191.603 416.577 200.992 407.403 212.745 400.81C224.642 394.217 237.685 390.92 251.875 390.92C266.065 390.92 279.037 394.217 290.79 400.81C302.687 407.403 312.003 416.577 318.74 428.33C325.62 440.083 329.06 453.342 329.06 468.105C329.06 482.868 325.62 496.198 318.74 508.095C311.86 519.848 302.543 529.022 290.79 535.615C279.037 542.208 266.065 545.505 251.875 545.505ZM251.875 511.965C263.915 511.965 273.518 507.952 280.685 499.925C287.995 491.898 291.65 481.292 291.65 468.105C291.65 454.775 287.995 444.168 280.685 436.285C273.518 428.258 263.915 424.245 251.875 424.245C239.692 424.245 229.945 428.187 222.635 436.07C215.468 443.953 211.885 454.632 211.885 468.105C211.885 481.435 215.468 492.113 222.635 500.14C229.945 508.023 239.692 511.965 251.875 511.965ZM426.484 544L395.094 487.025H386.279V544H349.514V393.07H411.219C423.115 393.07 433.22 395.148 441.534 399.305C449.99 403.462 456.297 409.195 460.454 416.505C464.61 423.672 466.689 431.698 466.689 440.585C466.689 450.618 463.822 459.577 458.089 467.46C452.499 475.343 444.185 480.933 433.149 484.23L467.979 544H426.484ZM386.279 461.01H409.069C415.805 461.01 420.822 459.362 424.119 456.065C427.559 452.768 429.279 448.11 429.279 442.09C429.279 436.357 427.559 431.842 424.119 428.545C420.822 425.248 415.805 423.6 409.069 423.6H386.279V461.01ZM598.343 393.07V422.525H558.352V544H521.587V422.525H481.598V393.07H598.343ZM715.049 393.07V422.525H653.559V454.345H699.569V482.94H653.559V544H616.794V393.07H715.049ZM805.752 545.505C791.562 545.505 778.519 542.208 766.622 535.615C754.869 529.022 745.48 519.848 738.457 508.095C731.577 496.198 728.137 482.868 728.137 468.105C728.137 453.342 731.577 440.083 738.457 428.33C745.48 416.577 754.869 407.403 766.622 400.81C778.519 394.217 791.562 390.92 805.752 390.92C819.942 390.92 832.914 394.217 844.667 400.81C856.564 407.403 865.88 416.577 872.617 428.33C879.497 440.083 882.937 453.342 882.937 468.105C882.937 482.868 879.497 496.198 872.617 508.095C865.737 519.848 856.42 529.022 844.667 535.615C832.914 542.208 819.942 545.505 805.752 545.505ZM805.752 511.965C817.792 511.965 827.395 507.952 834.562 499.925C841.872 491.898 845.527 481.292 845.527 468.105C845.527 454.775 841.872 444.168 834.562 436.285C827.395 428.258 817.792 424.245 805.752 424.245C793.569 424.245 783.822 428.187 776.512 436.07C769.345 443.953 765.762 454.632 765.762 468.105C765.762 481.435 769.345 492.113 776.512 500.14C783.822 508.023 793.569 511.965 805.752 511.965ZM940.156 515.62H988.316V544H903.391V393.07H940.156V515.62ZM1042.62 393.07V544H1005.85V393.07H1042.62ZM1140.64 545.505C1126.45 545.505 1113.41 542.208 1101.51 535.615C1089.76 529.022 1080.37 519.848 1073.34 508.095C1066.46 496.198 1063.02 482.868 1063.02 468.105C1063.02 453.342 1066.46 440.083 1073.34 428.33C1080.37 416.577 1089.76 407.403 1101.51 400.81C1113.41 394.217 1126.45 390.92 1140.64 390.92C1154.83 390.92 1167.8 394.217 1179.55 400.81C1191.45 407.403 1200.77 416.577 1207.5 428.33C1214.38 440.083 1217.82 453.342 1217.82 468.105C1217.82 482.868 1214.38 496.198 1207.5 508.095C1200.62 519.848 1191.31 529.022 1179.55 535.615C1167.8 542.208 1154.83 545.505 1140.64 545.505ZM1140.64 511.965C1152.68 511.965 1162.28 507.952 1169.45 499.925C1176.76 491.898 1180.41 481.292 1180.41 468.105C1180.41 454.775 1176.76 444.168 1169.45 436.285C1162.28 428.258 1152.68 424.245 1140.64 424.245C1128.46 424.245 1118.71 428.187 1111.4 436.07C1104.23 443.953 1100.65 454.632 1100.65 468.105C1100.65 481.435 1104.23 492.113 1111.4 500.14C1118.71 508.023 1128.46 511.965 1140.64 511.965ZM1255.48 545.72C1249.03 545.72 1243.72 543.857 1239.57 540.13C1235.55 536.26 1233.55 531.53 1233.55 525.94C1233.55 520.207 1235.55 515.405 1239.57 511.535C1243.72 507.665 1249.03 505.73 1255.48 505.73C1261.78 505.73 1266.94 507.665 1270.96 511.535C1275.11 515.405 1277.19 520.207 1277.19 525.94C1277.19 531.53 1275.11 536.26 1270.96 540.13C1266.94 543.857 1261.78 545.72 1255.48 545.72Z"
+                fill="url(#gt)"
+              />
+            </svg>
+          </h1>
+          <div class="hm">
+            <p class="sub ab" style="--x: 46; --y: 566">
+              Rifki Yudika Perdana — Web Developer
+            </p>
+            <p class="yr ab" style="--x: 1205; --y: 566">2026</p>
           </div>
-          <h4 class="tl-role">Active Member — Media & Public Relations Department</h4>
-          <p class="tl-desc">Actively participating in organization activities, contributing to internal discussions, and supporting the planning and execution of upcoming student development programs.</p>
-        </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta">
-            <span class="tl-period">Jun 2026</span>
-            <span class="tl-org">HIMAKOM &amp; UKM-U GRADIEN, Universitas Lampung</span>
+        </section>
+        <section
+          id="about"
+          class="sx"
+          style="top: 980px; height: 1020px"
+          aria-labelledby="ab-t"
+        >
+          <svg
+            class="art a-rg"
+            viewBox="-700 -700 1400 1400"
+            width="1400"
+            height="1400"
+            aria-hidden="true"
+            style="left: -246px; top: -346px"
+          >
+            <defs>
+              <path
+                id="rp"
+                d="M0,-598A598,598 0 1,1 0,598A598,598 0 1,1 0,-598"
+              />
+            </defs>
+            <g>
+              <text
+                fill="#fff"
+                fill-opacity="1"
+                font-family="Poppins,sans-serif"
+                font-weight="300"
+                font-size="32"
+                style="white-space: pre"
+              >
+                <textPath href="#rp" textLength="3757" lengthAdjust="spacing">
+                  hello there hello there hello there hello there hello there
+                  hello there hello there hello there hello there hello there
+                  hello there hello there hello there hello there hello there
+                  hello there hello there
+                </textPath>
+              </text>
+            </g>
+          </svg>
+          <img
+            class="art a-pb"
+            alt=""
+            aria-hidden="true"
+            src="assets/art/planet-b.webp"
+            style="left: -259px; top: -367px; width: 1426px; height: 1440px"
+          />
+          <h2 id="ab-t" class="pill g ab" style="--x: 1085; --y: 8">
+            ABOUT ME
+          </h2>
+          <div class="pn g ab" style="--x: 150; --y: 109">
+            <p class="eb ab" style="--x: 98; --y: 45">
+              Rifki Yudika Perdana · Web Developer
+            </p>
+            <p class="hd ab" style="--x: 98; --y: 74">
+              <b>HELLO!</b> NAMA AKU RIFKI
+            </p>
+            <p class="pg ab" style="--x: 95; --y: 145">
+              Mahasiswa Teknik Informatika Universitas Lampung dengan fokus web
+              development. Membangun sistem web berbasis Laravel, salah satunya
+              Gaming Lounge Booking System, serta merancang UI/UX di Figma,
+              mulai dari aplikasi pemesanan restoran hingga aplikasi kesehatan
+              dan perjalanan.
+            </p>
+            <div class="ph ab" style="--x: 932; --y: 62">
+              <img
+                src="assets/images/profile.PNG"
+                alt="Foto Rifki Yudika Perdana"
+                onerror="this.remove()"
+              />
+            </div>
+            <div class="chips ab" style="--x: 100; --y: 468">
+              <div class="chip g"><b>University</b><span>UNILA</span></div>
+              <div class="chip g">
+                <b>Major</b><span class="sm">Teknik Informatika</span>
+              </div>
+              <a
+                class="chip g cv"
+                href="assets/CV_Rifki_Yudika_Perdana.pdf"
+                download
+                ><b>Download<br />CV</b></a
+              >
+            </div>
           </div>
-          <h4 class="tl-role">Training Assistant &amp; Participant Mentor - Social Relations</h4>
-          <p class="tl-desc">Facilitated the "Data, Collaboration, and Creativity" event by mentoring participants during database training sessions and providing technical guidance for their final project development.</p>
-        </div>
+        </section>
       </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta">
-            <span class="tl-period">Mar 2026</span>
-            <span class="tl-org">UKM-U GRADIEN, Universitas Lampung</span>
+      <section
+        id="skills"
+        class="sc"
+        style="height: 1150px"
+        aria-labelledby="sk-t"
+      >
+        <img
+          class="art a-sk"
+          alt=""
+          aria-hidden="true"
+          src="assets/art/skills-ring.webp"
+          style="left: -226px; top: 53px; width: 2066px; height: 1130px"
+        />
+        <div class="sp g ab" style="--x: -64; --y: 81">
+          <h2 id="sk-t" class="h2 ab" style="--x: 130; --y: 29">
+            SKILLSET &amp; EXPERTISE LEVEL
+          </h2>
+          <ul class="sk ab" style="--x: 128; --y: 83">
+            <li><span>Laravel</span></li>
+            <li><span>PHP</span></li>
+            <li><span>MySQL</span></li>
+            <li><span>HTML/CSS</span></li>
+            <li><span>UI/UX Design</span></li>
+            <li><span>Figma</span></li>
+            <li><span>OJS</span></li>
+            <li><span>GitHub</span></li>
+            <li><span>C++</span></li>
+            <li><span>Java</span></li>
+            <li><span>SQL</span></li>
+            <li><span>Python (Basic)</span></li>
+          </ul>
+        </div>
+        <div class="wp g ab" style="--x: 380; --y: 619">
+          <h2 class="h2 ab" style="--x: 64; --y: 33">SOFTWARE &amp; TOOLS</h2>
+          <div class="tiles ab" style="--x: 62; --y: 98">
+            <figure class="tile">
+              <div class="tb o">Lv</div>
+              <figcaption>Laravel</figcaption>
+            </figure>
+            <figure class="tile">
+              <div class="tb">PHP</div>
+              <figcaption>PHP</figcaption>
+            </figure>
+            <figure class="tile">
+              <div class="tb o">My</div>
+              <figcaption>MySQL</figcaption>
+            </figure>
+            <figure class="tile">
+              <div class="tb">Tw</div>
+              <figcaption>Tailwind</figcaption>
+            </figure>
+            <figure class="tile">
+              <div class="tb o">Fg</div>
+              <figcaption>Figma</figcaption>
+            </figure>
+            <figure class="tile">
+              <div class="tb">OJS</div>
+              <figcaption>OJS</figcaption>
+            </figure>
           </div>
-          <h4 class="tl-role">Executive Secretary for Workshop and Inauguration Event</h4>
-          <p class="tl-desc">Managed event administration, including document preparation, letter distribution, archiving, signature requests, and coordination with related parties.</p>
         </div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-meta">
-            <span class="tl-period">Oct 2024 – Feb 2025</span>
-            <span class="tl-org">Himpunan Mahasiswa Teknik Elektro, Universitas Lampung</span>
+      </section>
+      <section
+        id="projects"
+        class="sc"
+        style="padding-top: 152px; padding-bottom: 30px"
+        aria-labelledby="pj-t"
+      >
+        <h2
+          id="pj-t"
+          class="pill pj g ab"
+          style="--x: 474; --y: 35; --w: 488px"
+        >
+          Things I’ve Built
+        </h2>
+        <div class="cards">
+          <img
+            class="art a-st"
+            alt=""
+            aria-hidden="true"
+            src="assets/art/streak.webp"
+            style="left: -265px; top: 321px; width: 1626px; height: 870px"
+          />
+          <article class="card g fl">
+            <h3>Gaming Lounge Booking System</h3>
+            <div class="st">Featured · Web App</div>
+            <p>
+              Sistem web berbasis Laravel untuk manajemen room, transaksi, dan
+              pemesanan mandiri. Mendukung peran Admin dan Customer, pilihan
+              room VIP/VVIP, serta perhitungan harga otomatis. Tersedia galeri
+              12 screenshot yang mencakup alur welcome, login, dashboard admin,
+              setup room, reservasi, timer, hingga income.
+            </p>
+            <div class="kw">
+              <span>Laravel</span><span>Booking</span
+              ><span>Admin &amp; Customer</span>
+            </div>
+            <div class="ctas">
+              <a class="cta" href="gaming-lounge-gallery.html"
+                >View Screens<i
+                  ><svg
+                    viewBox="0 0 10 10"
+                    width="10"
+                    height="10"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 8 8 2M3 2h5v5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg></i></a
+              ><a
+                class="cta"
+                href="https://github.com/Ryper29/Sistem-Manajemen-dan-Booking-Gaming-Lounge"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Source<i
+                  ><svg
+                    viewBox="0 0 10 10"
+                    width="10"
+                    height="10"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 8 8 2M3 2h5v5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg></i
+              ></a>
+            </div>
+          </article>
+          <article class="card g">
+            <h3>Academic Journal Website</h3>
+            <div class="st">Web · OJS</div>
+            <p>
+              Konfigurasi dan pengelolaan website jurnal akademik menggunakan
+              OJS, mencakup instalasi, konfigurasi sistem, user management, dan
+              kustomisasi antarmuka. Tersedia dua screenshot situs beserta
+              tautan repository GitHub.
+            </p>
+            <div class="kw">
+              <span>OJS</span><span>Konfigurasi</span><span>Kustomisasi</span>
+            </div>
+            <div class="ctas">
+              <a class="cta" href="ojs-gallery.html"
+                >View Screens<i
+                  ><svg
+                    viewBox="0 0 10 10"
+                    width="10"
+                    height="10"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 8 8 2M3 2h5v5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg></i></a
+              ><a
+                class="cta"
+                href="https://github.com/Ryper29/OJS-Medtechno-Open-Journal-System-"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Source<i
+                  ><svg
+                    viewBox="0 0 10 10"
+                    width="10"
+                    height="10"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 8 8 2M3 2h5v5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg></i
+              ></a>
+            </div>
+          </article>
+          <article class="card g">
+            <h3>Waroeng Huwi</h3>
+            <div class="st">UI/UX Design</div>
+            <p>
+              Desain UI/UX alur pemesanan restoran yang mencakup pemilihan menu,
+              kustomisasi pesanan, hingga konfirmasi. Tersedia 21 screenshot
+              variasi antarmuka restoran pada galeri proyek.
+            </p>
+            <div class="kw">
+              <span>UI/UX</span><span>Figma</span><span>Restoran</span>
+            </div>
+            <div class="ctas">
+              <a class="cta" href="waroeng-huwi-gallery.html"
+                >View Screens<i
+                  ><svg
+                    viewBox="0 0 10 10"
+                    width="10"
+                    height="10"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 8 8 2M3 2h5v5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg></i
+              ></a>
+            </div>
+          </article>
+          <article class="card g">
+            <h3>DocTime</h3>
+            <div class="st">UI/UX · Mobile App</div>
+            <p>
+              Mockup aplikasi mobile healthcare yang berfokus pada penjadwalan
+              appointment dan alur terkait. Mencakup tampilan untuk pasien
+              maupun dokter dalam 37 screenshot antarmuka pada galeri proyek.
+            </p>
+            <div class="kw">
+              <span>UI/UX</span><span>Healthcare</span><span>Mobile</span>
+            </div>
+            <div class="ctas">
+              <a class="cta" href="doctime-gallery.html"
+                >View Screens<i
+                  ><svg
+                    viewBox="0 0 10 10"
+                    width="10"
+                    height="10"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 8 8 2M3 2h5v5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg></i
+              ></a>
+            </div>
+          </article>
+          <article class="card g">
+            <h3>TripMate</h3>
+            <div class="st">UI/UX · Mobile App</div>
+            <p>
+              Mockup aplikasi travel untuk perencanaan perjalanan dan penemuan
+              destinasi. Tersedia 16 screenshot antarmuka yang dapat dilihat
+              pada galeri proyek.
+            </p>
+            <div class="kw">
+              <span>UI/UX</span><span>Travel</span><span>Mobile</span>
+            </div>
+            <div class="ctas">
+              <a class="cta" href="tripmate-gallery.html"
+                >View Screens<i
+                  ><svg
+                    viewBox="0 0 10 10"
+                    width="10"
+                    height="10"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 8 8 2M3 2h5v5"
+                      stroke="#fff"
+                      fill="none"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    /></svg></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        id="experience"
+        class="sc"
+        style="height: 950px"
+        aria-labelledby="xp-t"
+      >
+        <img
+          class="art a-wv"
+          alt=""
+          aria-hidden="true"
+          src="assets/art/wave.webp"
+          style="left: -400px; top: 70px; width: 2240px; height: 1829px"
+        />
+        <div class="xp g ab" style="--x: 19; --y: 50">
+          <h2 id="xp-t" class="pill ab" style="--x: 36; --y: 32; --w: 378px">
+            EXPERIENCES
+          </h2>
+          <div
+            class="xl ab"
+            style="--x: 36; --y: 106"
+            tabindex="0"
+            role="region"
+            aria-label="Daftar pengalaman"
+          >
+            <article class="xi">
+              <div class="xr">
+                <span>UKM-U GRADIEN, Universitas Lampung</span><span>Jan 2026 – Present</span>
+              </div>
+              <em>Active Member — Media &amp; Public Relations Department</em>
+              <p>Actively participating in organization activities and supporting student development programs.</p>
+            </article>
+            <article class="xi">
+              <div class="xr">
+                <span>HIMAKOM &amp; UKM-U GRADIEN, Universitas Lampung</span><span>Jun 2026</span>
+              </div>
+              <em>Training Assistant &amp; Participant Mentor — Social Relations</em>
+              <p>Mentored participants during database training and guided their final project development.</p>
+            </article>
+            <article class="xi">
+              <div class="xr">
+                <span>UKM-U GRADIEN, Universitas Lampung</span><span>Mar 2026</span>
+              </div>
+              <em>Executive Secretary — Workshop and Inauguration</em>
+              <p>Managed event documentation, correspondence, archiving, and coordination with related parties.</p>
+            </article>
+            <article class="xi">
+              <div class="xr">
+                <span>Himpunan Mahasiswa Teknik Elektro, Universitas Lampung</span><span>Oct 2024 – Feb 2025</span>
+              </div>
+              <em>Public Relations and Equipment Committee Member</em>
+              <p>Assisted with information distribution, participant coordination, and event technical preparation.</p>
+            </article>
           </div>
-          <h4 class="tl-role">Public Relations and Equipment Committee Member</h4>
-          <p class="tl-desc">Assisted in information distribution, participant coordination, and technical preparation for student organization events.</p>
         </div>
-      </div>
-    </div>
-
-    <hr class="exp-divider" />
-
-    <p class="exp-sub-title reveal">Training</p>
-    <div class="training-grid">
-      <div class="training-card reveal">
-        <span class="tr-icon">🤖</span>
-        <div class="tr-info">
-          <h4>Machine Learning and Python Programming Event</h4>
-          <span class="tr-period">September 2025</span>
-          <span class="tr-org">SpecialSkill.id</span>
+      </section>
+      <section
+        id="contact"
+        class="sc"
+        style="height: 950px"
+        aria-labelledby="ct-t"
+      >
+        <h2 id="ct-t" class="cth ab" style="--x: 74; --y: 141">
+          Let’s make some relationship
+        </h2>
+        <div class="cc ab" style="--x: 73; --y: 371">
+          <img src="assets/images/profile.PNG" alt="" onerror="this.remove()" />
         </div>
-      </div>
-      <div class="training-card reveal">
-        <span class="tr-icon">📱</span>
-        <div class="tr-info">
-          <h4>Flutter Training</h4>
-          <span class="tr-period">October 2024</span>
-          <span class="tr-org">Informatics Engineering Study Program, Universitas Lampung</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="section alt-bg">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-label">Contact</span>
-      <h2 class="section-title">Let's Connect</h2>
-      <p class="section-desc">Feel free to reach me through one of the platforms below.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal">
-<a href="mailto:rifkirifki718@gmail.com" class="contact-item">
-            <span class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
-            <div><span class="ci-label">Email</span><span class="ci-val">rifkirifki718@gmail.com</span></div>
-          </a>
-          <a href="https://wa.me/6287880415529" class="contact-item" target="_blank" rel="noopener">
-            <span class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.454.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.402h-.004a21.412 21.412 0 0 1-1.413-.198c-.248-.075-.422-.174-.547-.323l-2.913-3.315-.323-.124a1.874 1.874 0 0 0-.598-.037c-.273.037-.547.148-.794.396-.795.795-1.672 1.733-2.103 2.306v.037a17.64 17.64 0 0 0 .148 3.003c.174.87 1.07 3.213 3.91 4.343.812.323 1.734.397 2.58.324.87-.06 1.748-.297 2.537-1.041.79-.743 1.44-1.854 1.734-3.117.037-.597.06-1.194.037-1.393-.037-.248-.149-.496-.446-.62-.67-.198-.62-.174-.941-.061-.323.085-.547.248-.745.423-.273.248-.52.62-.646 1.015-.248.695-.447 1.342-.447 1.64a10.844 10.844 0 0 0 .273 1.53c.372 1.392 1.193 2.384 2.579 2.863.447.148.894.223 1.342.148.323-.037.57-.198.769-.447.149-.174.198-.347.198-.52a.96.96 0 0 0-.248-.47c-.347-.323-1.194-1.507-1.592-2.33-.248-.497-.546-.894-.844-1.193l-.198-.198c-.372-.422-.497-.795-.447-1.192.037-.248.174-.497.396-.794.447-.496 1.475-1.318 2.33-2.14.844-.812 1.44-1.748 1.593-2.295.173-.597.149-1.12-.025-1.27-.174-.149-.447-.198-.72-.174z"></path></svg></span>
-            <div><span class="ci-label">WhatsApp</span><span class="ci-val">+62 878-8041-5529</span></div>
-          </a>
-          <a href="https://www.linkedin.com/in/rifki-yudika-perdana" class="contact-item" target="_blank" rel="noopener">
-            <span class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
-            <div><span class="ci-label">LinkedIn</span><span class="ci-val">rifki-yudika-perdana</span></div>
-          </a>
-          <a href="https://github.com/Ryper29" class="contact-item" target="_blank" rel="noopener">
-            <span class="ci-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.52 11.52 0 0 1 12 6.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></span>
-            <div><span class="ci-label">GitHub</span><span class="ci-val">Ryper29</span></div>
-          </a>
-      </div>
-      <form class="contact-form reveal" id="contact-form" action="https://formsubmit.co/rifkirifki718@gmail.com" method="POST">
-        <input type="hidden" name="_next" value="#contact">
-        <input type="hidden" name="_subject" value="Portfolio Contact: New Message">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <div class="form-group">
-          <label for="cf-name">Name</label>
-          <input type="text" id="cf-name" name="name" placeholder="Your full name" required />
-        </div>
-        <div class="form-group">
-          <label for="cf-email">Email</label>
-          <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="cf-msg">Message</label>
-          <textarea id="cf-msg" name="message" rows="5" placeholder="Write your message here..." required></textarea>
-        </div>
-        <p id="form-error-msg" style="display: none; color: #ef4444; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px;"></p>
-        <button type="submit" class="btn btn-primary" id="send-btn">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <p class="footer-text">© 2026 Rifki Yudika Perdana. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="https://github.com/Ryper29" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.52 11.52 0 0 1 12 6.803c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> GitHub</a>
-      <a href="https://www.linkedin.com/in/rifki-yudika-perdana" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
+        <a
+          class="lk g ab"
+          style="--x: 355; --y: 371"
+          href="https://www.linkedin.com/in/rifki-yudika-perdana"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M5 9.5V19M5 5.6v.1M10 19v-9.5M10 13a3 3 0 0 1 6 0v6"
+            /></svg
+          ><span>LinkedIn</span
+          ><i
+            ><svg viewBox="0 0 10 10" width="10" height="10" aria-hidden="true">
+              <path
+                d="M2 8 8 2M3 2h5v5"
+                stroke="#fff"
+                fill="none"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg></i></a
+        ><a class="lk g ab" style="--x: 395; --y: 442" href="https://wa.me/6287880415529"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 5h16v11H10l-4 4v-4H4z" /></svg
+          ><span>WhatsApp</span
+          ><i
+            ><svg viewBox="0 0 10 10" width="10" height="10" aria-hidden="true">
+              <path
+                d="M2 8 8 2M3 2h5v5"
+                stroke="#fff"
+                fill="none"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg></i></a
+        ><a class="lk g ab" style="--x: 411; --y: 513" href="mailto:rifkirifki718@gmail.com"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18v12H3zM3 7l9 7 9-7" /></svg
+          ><span>Email</span
+          ><i
+            ><svg viewBox="0 0 10 10" width="10" height="10" aria-hidden="true">
+              <path
+                d="M2 8 8 2M3 2h5v5"
+                stroke="#fff"
+                fill="none"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg></i></a
+        ><a
+          class="lk g ab"
+          style="--x: 355; --y: 654"
+          href="https://github.com/Ryper29"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+            /></svg
+          ><span>GitHub</span
+          ><i
+            ><svg viewBox="0 0 10 10" width="10" height="10" aria-hidden="true">
+              <path
+                d="M2 8 8 2M3 2h5v5"
+                stroke="#fff"
+                fill="none"
+                stroke-width="1.3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              /></svg></i
+        ></a>
+        <form
+          class="fm g ab"
+          style="--x: 700; --y: 150"
+          data-endpoint="https://formsubmit.co/ajax/rifkirifki718@gmail.com"
+          novalidate
+          aria-labelledby="fm-t"
+        >
+          <h3 id="fm-t" class="fh">Send me a message</h3>
+          <label class="sr" for="f-n">Nama</label
+          ><input
+            id="f-n"
+            name="name"
+            placeholder="Name"
+            autocomplete="name"
+            required
+          />
+          <label class="sr" for="f-e">Email</label
+          ><input
+            id="f-e"
+            name="email"
+            type="email"
+            placeholder="Email"
+            autocomplete="email"
+            required
+          />
+          <label class="sr" for="f-m">Pesan</label
+          ><textarea
+            id="f-m"
+            name="message"
+            placeholder="Message"
+            required
+          ></textarea>
+          <input type="hidden" name="_next" value="#contact" />
+          <input type="hidden" name="_subject" value="Portfolio Contact: New Message" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input class="sr" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="cta" type="submit">
+            Send Message<i
+              ><svg
+                viewBox="0 0 10 10"
+                width="10"
+                height="10"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 8 8 2M3 2h5v5"
+                  stroke="#fff"
+                  fill="none"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></i>
+          </button>
+          <p class="fs" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="home.js" defer></script>
+  </body>
 </html>

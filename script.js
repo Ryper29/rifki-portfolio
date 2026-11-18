@@ -1,196 +1,156 @@
-/* Dark Mode */
 const DARK_KEY = 'ryp-dark-mode';
 
-function applyTheme(dark) {
-  document.body.classList.toggle('dark-mode', dark);
-  const btn = document.getElementById('theme-toggle');
-  if (btn) btn.textContent = dark ? '☀️' : '🌙';
+function applyTheme(light) {
+  document.body.classList.toggle('light-mode', light);
+  const button = document.getElementById('theme-toggle');
+  if (button) {
+    button.textContent = light ? '☾' : '☼';
+    button.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+    button.title = light ? 'Switch to dark theme' : 'Switch to light theme';
+  }
 }
 
-const savedDark = localStorage.getItem(DARK_KEY) === 'true';
-applyTheme(savedDark);
+let savedLight = false;
+try {
+  const storedTheme = localStorage.getItem(DARK_KEY);
+  savedLight = storedTheme !== null && storedTheme !== 'true';
+} catch {}
+applyTheme(savedLight);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('theme-toggle');
-  if (btn) {
-    btn.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('dark-mode');
-      localStorage.setItem(DARK_KEY, isDark);
-      btn.textContent = isDark ? '☀️' : '🌙';
+  const themeButton = document.getElementById('theme-toggle');
+  if (themeButton) {
+    themeButton.addEventListener('click', () => {
+      const light = !document.body.classList.contains('light-mode');
+      applyTheme(light);
+      try {
+        localStorage.setItem(DARK_KEY, light ? 'false' : 'true');
+      } catch {}
     });
   }
 });
 
-/* Navbar */
 const navbar = document.getElementById('navbar');
 if (navbar) {
   window.addEventListener('scroll', () => {
-    navbar.style.boxShadow = window.scrollY > 30
-      ? '0 2px 10px rgba(0,0,0,.08)'
-      : 'none';
-  });
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
 }
 
-/* Hamburger Menu */
-const hamburger    = document.getElementById('hamburger');
+const hamburger = document.getElementById('hamburger');
 const mobileDrawer = document.getElementById('mobile-drawer');
 
+function setMenuOpen(open) {
+  if (!hamburger || !mobileDrawer) return;
+  hamburger.setAttribute('aria-expanded', String(open));
+  hamburger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  hamburger.classList.toggle('open', open);
+  mobileDrawer.hidden = !open;
+  mobileDrawer.classList.toggle('open', open);
+}
+
 if (hamburger && mobileDrawer) {
-  hamburger.addEventListener('click', () => {
-    const open = mobileDrawer.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', open);
-  });
-  document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileDrawer.classList.remove('open');
-      hamburger.classList.remove('open');
-    });
+  hamburger.addEventListener('click', () => setMenuOpen(hamburger.getAttribute('aria-expanded') !== 'true'));
+  mobileDrawer.querySelectorAll('.mob-link').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !mobileDrawer.hidden) {
+      setMenuOpen(false);
+      hamburger.focus();
+    }
   });
 }
 
-/* Active Nav on Scroll */
-const sections = document.querySelectorAll('section[id]');
-const navLinks  = document.querySelectorAll('.nav-link');
-
-if (sections.length && navLinks.length) {
-  const obs = new IntersectionObserver((entries) => {
+const sections = document.querySelectorAll('main section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+if ('IntersectionObserver' in window && sections.length && navLinks.length) {
+  const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         navLinks.forEach(link => {
-          link.classList.toggle('active',
-            link.getAttribute('data-section') === entry.target.id);
+          const active = link.dataset.section === entry.target.id;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
         });
       }
     });
-  }, { rootMargin: '-40% 0px -50% 0px' });
-  sections.forEach(s => obs.observe(s));
+  }, { rootMargin: '-35% 0px -55% 0px' });
+  sections.forEach(section => sectionObserver.observe(section));
 }
 
-/* Scroll Reveal */
-const reveals = document.querySelectorAll('.reveal');
-if (reveals.length) {
-  const ro = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        ro.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => ro.observe(el));
-}
-
-/* Smooth Scroll */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+  anchor.addEventListener('click', event => {
+    const id = anchor.getAttribute('href');
+    if (!id || id === '#') return;
+    const target = document.getElementById(id.slice(1));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    if (history.replaceState) history.replaceState(null, '', id);
   });
 });
 
-/* Form Submit with FormSubmit */
-const form     = document.getElementById('contact-form');
-const sendBtn  = document.getElementById('send-btn');
-const errorMsg = document.getElementById('form-error-msg');
+const form = document.getElementById('contact-form');
+const sendButton = document.getElementById('send-btn');
+const errorMessage = document.getElementById('form-error-msg');
 
 function showToast(message, isError = false) {
   const toast = document.createElement('div');
+  toast.className = `toast${isError ? ' toast-error' : ''}`;
+  toast.setAttribute('role', isError ? 'alert' : 'status');
   toast.textContent = message;
-  toast.style.cssText = `
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    padding: 14px 22px;
-    border-radius: 10px;
-    background: ${isError ? '#ef4444' : '#22c55e'};
-    color: #fff;
-    font-size: 0.9rem;
-    font-weight: 600;
-    box-shadow: 0 4px 16px rgba(0,0,0,.15);
-    z-index: 1000;
-    animation: slideIn 0.3s ease;
-  `;
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  `;
-  document.head.appendChild(style);
   document.body.appendChild(toast);
-  setTimeout(() => {
-    toast.style.animation = 'slideIn 0.3s ease reverse';
-    setTimeout(() => toast.remove(), 300);
-  }, 4000);
+  window.setTimeout(() => toast.remove(), 4300);
 }
 
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+if (form && sendButton && errorMessage) {
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const nameInput = document.getElementById('cf-name');
+    const emailInput = document.getElementById('cf-email');
+    const messageInput = document.getElementById('cf-msg');
+    if (!nameInput || !emailInput || !messageInput) return;
 
-    const nameInput  = document.getElementById('cf-name').value.trim();
-    const emailInput = document.getElementById('cf-email').value.trim();
-    const msgInput   = document.getElementById('cf-msg').value.trim();
-
-    if (nameInput === '' || emailInput === '' || msgInput === '') {
-      errorMsg.innerText = 'Peringatan: Seluruh form wajib diisi sebelum dikirim!';
-      errorMsg.style.display = 'block';
+    if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+      errorMessage.textContent = 'Please complete all fields before sending.';
+      errorMessage.hidden = false;
       return;
     }
 
-    errorMsg.style.display = 'none';
-    sendBtn.textContent = 'Mengirim...';
-    sendBtn.disabled = true;
-
+    errorMessage.hidden = true;
+    sendButton.textContent = 'Sending…';
+    sendButton.disabled = true;
     try {
-      const formData = new FormData(form);
       const response = await fetch(form.action, {
         method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
       });
-
-      if (response.ok) {
-        showToast('✅ Pesan terkirim! Saya akan membalas segera.');
-        form.reset();
-      } else {
-        throw new Error('Gagal mengirim');
-      }
-    } catch (err) {
-      showToast('❌ Gagal mengirim. Coba lagi nanti.', true);
+      if (!response.ok) throw new Error('Message delivery failed');
+      showToast('Message sent. Thank you for reaching out.');
+      form.reset();
+    } catch {
+      showToast('Could not send the message. Please try again later.', true);
     } finally {
-      sendBtn.textContent = 'Send Message';
-      sendBtn.disabled = false;
+      sendButton.textContent = 'Send message';
+      sendButton.disabled = false;
     }
   });
 }
 
-/* Project Filter */
-const filterBtns   = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
-
-if (filterBtns.length && projectCards.length) {
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filterValue = btn.getAttribute('data-filter');
-
+if (filterButtons.length && projectCards.length) {
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      filterButtons.forEach(item => {
+        const active = item === button;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
       projectCards.forEach(card => {
-        if (filterValue === 'all' || card.classList.contains(filterValue)) {
-          card.style.display = 'flex';
-          card.style.opacity = '1';
-          card.style.transform = 'scale(1)';
-        } else {
-          card.style.display = 'none';
-        }
+        card.hidden = filter !== 'all' && !card.classList.contains(filter);
       });
     });
   });
