@@ -69,3 +69,10 @@
     });
   }
 })();
+(() => {
+  const w = document.querySelector('.navwrap');
+  if (!w) return;
+  const f = () => w.classList.toggle('scrolled', scrollY > 40);
+  f();
+  addEventListener('scroll', f, { passive: true });
+})();
