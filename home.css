@@ -1046,3 +1046,21 @@ a.chip:hover {
     width: 100%;
   }
 }
+.navwrap { position: sticky; top: 0; height: 0; z-index: 30; }
+.navwrap .nav { transition: top .35s ease, background-color .35s ease; }
+.navwrap.scrolled .nav { top: 14px; background: rgba(12,12,12,.78); }
+html { scroll-padding-top: calc(84px * var(--z, 1) + env(safe-area-inset-top, 0px)); }
+@media (prefers-reduced-motion: reduce) { .navwrap .nav { transition: none; } }
+@media (max-width: 999px) {
+  .navwrap .nav { position: absolute; left: 14px; right: 14px; top: 12px; width: auto; margin: 0; }
+  .navwrap.scrolled .nav { top: 8px; }
+  #home { padding-top: 70px; }
+}
+
+@media (min-width: 1000px) {
+  .stage { overflow-x: visible; }
+  .sp { --ox: 1200; left: calc((var(--x) - var(--ox)) * 1px); width: calc((1157 + var(--ox)) * 1px); }
+  .sp > .ab { left: calc((var(--x) + var(--ox)) * 1px); }
+  .wp { width: calc((1326 + 1200) * 1px); }
+  .pn { width: calc((1305 + 1200) * 1px); }
+}
