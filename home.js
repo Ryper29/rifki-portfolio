@@ -31,23 +31,23 @@
       e.preventDefault();
       const d = Object.fromEntries(new FormData(f)),
         bad = [];
-      if (!d.name.trim()) bad.push(["name", "nama"]);
+      if (!d.name.trim()) bad.push(["name", "name"]);
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email))
         bad.push(["email", "email"]);
-      if (d.message.trim().length < 5) bad.push(["message", "pesan"]);
+      if (d.message.trim().length < 5) bad.push(["message", "message"]);
       if (bad.length) {
-        set("Periksa kembali: " + bad.map((b) => b[1]).join(", ") + ".", "err");
+        set("Please check: " + bad.map((b) => b[1]).join(", ") + ".", "err");
         f.elements[bad[0][0]].focus();
         return;
       }
       const ep = f.dataset.endpoint;
       if (!ep || ep.includes("GANTI_")) {
-        set("Form belum terhubung ke FormSubmit.", "err");
-        say("Form belum terhubung ke FormSubmit.", 0);
+        set("Contact form is not connected yet.", "err");
+        say("Contact form is not connected yet.", 0);
         return;
       }
       btn.disabled = true;
-      set("Mengirim…", "");
+      set("Sending...", "");
       try {
         const r = await fetch(ep, {
           method: "POST",
@@ -59,11 +59,11 @@
         });
         if (!r.ok) throw 0;
         f.reset();
-        set("Pesan terkirim. Terima kasih!", "ok");
-        say("Pesan terkirim. Terima kasih!", 1);
+        set("Message sent. Thank you!", "ok");
+        say("Message sent. Thank you!", 1);
       } catch {
-        set("Gagal mengirim. Coba lagi nanti.", "err");
-        say("Gagal mengirim pesan.", 0);
+        set("Failed to send. Please try again later.", "err");
+        say("Failed to send message.", 0);
       }
       btn.disabled = false;
     });
