@@ -33,10 +33,10 @@
         bad = [];
       if (!d.name.trim()) bad.push(["name", "name"]);
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email))
-        bad.push(["email", "email"]);
-      if (d.message.trim().length < 5) bad.push(["message", "message"]);
+        bad.push(["email", "valid email"]);
+      if (!d.message.trim()) bad.push(["message", "message"]);
       if (bad.length) {
-        set("Please check: " + bad.map((b) => b[1]).join(", ") + ".", "err");
+        set("Please provide: " + bad.map((b) => b[1]).join(", ") + ".", "err");
         f.elements[bad[0][0]].focus();
         return;
       }
@@ -57,13 +57,17 @@
           },
           body: JSON.stringify(d),
         });
-        if (!r.ok) throw 0;
+        const res = await r.json().catch(() => null);
+        if (!r.ok || (res && (res.success === false || res.success === "false"))) {
+          throw new Error((res && res.message) || "Failed to send. Please try again later.");
+        }
         f.reset();
         set("Message sent. Thank you!", "ok");
         say("Message sent. Thank you!", 1);
-      } catch {
-        set("Failed to send. Please try again later.", "err");
-        say("Failed to send message.", 0);
+      } catch (err) {
+        const msg = (err && err.message) || "Failed to send. Please try again later.";
+        set(msg, "err");
+        say(msg, 0);
       }
       btn.disabled = false;
     });
