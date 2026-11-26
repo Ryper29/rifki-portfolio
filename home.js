@@ -1,16 +1,25 @@
 (() => {
   const ls = [...document.querySelectorAll(".nav a")],
-    io = new IntersectionObserver(
-      (es) =>
-        es.forEach((e) => {
-          if (e.isIntersecting)
-            ls.forEach((a) =>
-              a.classList.toggle("on", a.hash === "#" + e.target.id),
-            );
-        }),
-      { rootMargin: "-40% 0px -55% 0px" },
-    );
-  document.querySelectorAll("main section[id]").forEach((s) => io.observe(s));
+    secs = [...document.querySelectorAll("main section[id]")],
+    setOn = (id) =>
+      ls.forEach((a) => a.classList.toggle("on", a.hash === "#" + id)),
+    syncNav = () => {
+      if (!secs.length) return;
+      if (scrollY < 40) return setOn(secs[0].id);
+      const maxY = document.documentElement.scrollHeight - innerHeight;
+      if (maxY > 0 && scrollY >= maxY - 24)
+        return setOn(secs[secs.length - 1].id);
+      const line = innerHeight * 0.35;
+      let cur = secs[0].id;
+      for (const s of secs) {
+        if (s.getBoundingClientRect().top <= line) cur = s.id;
+      }
+      setOn(cur);
+    };
+  syncNav();
+  addEventListener("scroll", syncNav, { passive: true });
+  addEventListener("resize", syncNav, { passive: true });
+  addEventListener("load", syncNav);
   const toast = document.getElementById("toast");
   let tt;
   const say = (m, ok) => {
