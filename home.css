@@ -796,7 +796,7 @@ a.chip:hover {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    background: rgba(10, 10, 10, 0.72);
+    background: rgba(10, 10, 10, 0.52);
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
   }
@@ -1067,15 +1067,15 @@ a.chip:hover {
     opacity: 0.9;
   }
   .a-pb {
-    left: -55vw !important;
+    left: -112vw !important;
     top: -16vw !important;
-    width: 118vw !important;
+    width: 205vw !important;
     height: auto !important;
   }
   .a-rg {
-    left: -54vw !important;
-    top: -14vw !important;
-    width: 116vw !important;
+    left: -110vw !important;
+    top: -13vw !important;
+    width: 201vw !important;
     height: auto !important;
   }
   .a-sk {
@@ -1085,10 +1085,11 @@ a.chip:hover {
     height: auto !important;
   }
   .a-st {
-    left: -40vw !important;
-    top: 10vw !important;
-    width: 190vw !important;
+    left: -101vw !important;
+    top: 50% !important;
+    width: 210vw !important;
     height: auto !important;
+    transform: translateY(-32%);
   }
   .a-wv {
     left: -60vw !important;
