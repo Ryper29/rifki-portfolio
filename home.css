@@ -736,21 +736,24 @@ a.chip:hover {
     top: auto !important;
   }
   .sc {
-    padding-bottom: 36px;
+    padding-bottom: 24px;
   }
   #home {
-    padding: 14px 14px 150px;
+    min-height: 62svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 96px 16px 72px;
   }
-  .nav {
-    width: auto;
-    height: 44px;
-    border-radius: 22px;
-    padding: 0 18px;
-    font-size: 12.5px;
-    margin-bottom: 40px;
+  .nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
   }
   .up {
-    font-size: 14px;
+    font-size: 13.5px;
+    margin-bottom: 6px;
   }
   .ttl {
     width: 100%;
@@ -759,45 +762,48 @@ a.chip:hover {
   .hm {
     display: flex;
     justify-content: space-between;
-    margin-top: 8px;
+    align-items: center;
+    margin-top: 10px;
   }
   .sub,
   .yr {
     font-size: 13px;
   }
   #about {
-    padding: 0 14px 20px;
+    padding: 36px 16px 24px;
   }
   .pill {
-    width: auto;
-    padding: 0 28px;
-    align-self: flex-start;
-    height: 50px;
-    border-radius: 25px;
-    font-size: 26px;
-    margin: 0 0 16px auto;
+    width: max-content;
+    padding: 0 24px;
+    height: 44px;
+    border-radius: 22px;
+    font-size: 22px;
+    margin: 0 auto 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: max-content;
+    background: rgba(10, 10, 10, 0.68);
   }
   .pn {
     width: auto;
     height: auto;
-    border-radius: 34px;
-    padding: 22px 20px;
+    border-radius: 28px;
+    padding: 20px 18px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    background: rgba(10, 10, 10, 0.72);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
   }
   .ph {
     order: -1;
     width: 100%;
-    max-width: 300px;
+    max-width: 240px;
     height: auto;
     aspect-ratio: 1;
-    margin: 0 auto 8px;
-    border-radius: 28px;
+    margin: 0 auto 6px;
+    border-radius: 24px;
   }
   .hd {
     font-size: min(6vw, 32px);
@@ -820,11 +826,14 @@ a.chip:hover {
   .chips {
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 8px;
   }
   .chip {
     width: calc(50% - 5px);
-    height: 60px;
+    min-height: 58px;
+    height: auto;
+    padding: 8px 10px;
+    border-radius: 20px;
   }
   .chip b {
     font-size: 14px;
@@ -835,25 +844,27 @@ a.chip:hover {
     line-height: 18px;
   }
   .chip span.sm {
-    font-size: 10px;
+    font-size: 11.5px;
   }
   .chip.cv {
     width: 100%;
+    min-height: 54px;
   }
   #skills {
-    padding-top: 30px;
+    padding-top: 24px;
   }
   .sp {
     width: auto;
     height: auto;
-    margin: 0 14px;
-    border-radius: 34px;
-    padding: 24px 18px;
+    margin: 0 16px;
+    border-radius: 28px;
+    padding: 22px 16px;
+    background: rgba(10, 10, 10, 0.68);
   }
   .h2 {
-    font-size: clamp(18px, 6vw, 28px);
+    font-size: clamp(19px, 5.4vw, 26px);
     white-space: normal;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
   .sk {
     margin-bottom: 10px;
@@ -862,8 +873,8 @@ a.chip:hover {
     height: 34px;
   }
   .sk span {
-    width: 34%;
-    font-size: 14px;
+    width: 38%;
+    font-size: 13.5px;
   }
   .sk b {
     flex: 1;
@@ -884,14 +895,15 @@ a.chip:hover {
   .wp {
     width: auto;
     height: auto;
-    margin: 22px 14px 0;
-    border-radius: 34px;
-    padding: 24px 18px;
+    margin: 20px 16px 0;
+    border-radius: 28px;
+    padding: 22px 16px;
+    background: rgba(10, 10, 10, 0.68);
   }
   .tiles {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px 10px;
+    gap: 16px 12px;
   }
   .tile,
   .tb {
@@ -909,27 +921,32 @@ a.chip:hover {
     font-size: 14px;
   }
   #projects {
-    padding: 30px 0 0;
+    padding: 24px 0 36px;
   }
   .pill.pj {
-    margin: 0 auto 22px;
+    display: flex;
+    margin: 0 auto 20px;
   }
   .cards {
     grid-template-columns: 1fr;
-    margin: 0 14px;
+    margin: 0 16px;
     gap: 16px;
   }
   .card {
     min-height: 0;
+    padding: 18px 16px;
+    border-radius: 24px;
   }
   .card.fl p {
     padding: 0;
   }
   .card h3 {
-    font-size: 26px;
+    font-size: 22px;
+    line-height: 1.2;
   }
   .card .st {
-    font-size: 16px;
+    font-size: 15px;
+    margin-top: 6px;
   }
   .card p {
     font-size: 14px;
@@ -937,46 +954,76 @@ a.chip:hover {
     text-align: left;
     min-height: 0;
   }
+  .kw {
+    margin: 16px 0 0 0;
+    gap: 8px;
+  }
   .kw span {
-    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 26px;
+    padding: 2px 12px;
+    font-size: 12.5px;
+    line-height: 1.2;
+  }
+  .ctas {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 16px;
+    gap: 10px;
   }
   .cta {
     width: 100%;
-    font-size: 19px;
+    height: 46px;
+    padding: 0 5px 0 22px;
+    font-size: 16px;
   }
   #experience {
-    padding-top: 30px;
+    padding-top: 24px;
   }
   .xp {
     width: auto;
     height: auto;
-    margin: 0 14px;
-    border-radius: 32px;
-    padding: 20px 14px;
+    margin: 0 16px;
+    border-radius: 28px;
+    padding: 22px 16px;
+    background: rgba(10, 10, 10, 0.68);
   }
   .xp .pill {
-    margin: 0 0 14px;
+    margin: 0 0 16px;
   }
   .xl {
     width: auto;
     height: auto;
-    max-height: 560px;
-    padding: 0 6px 0 0;
-  }
-  .xl::-webkit-scrollbar {
-    width: 8px;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
   }
   .xi {
     width: auto;
     min-height: 0;
-    padding: 14px;
+    padding: 16px;
     margin-bottom: 12px;
   }
+  .xi:last-child {
+    margin-bottom: 0;
+  }
   .xr {
-    font-size: 16px;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 15.5px;
+    line-height: 1.3;
+  }
+  .xr span:last-child {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.72);
   }
   .xi em {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.35;
     margin-top: 8px;
   }
   .xi p {
@@ -985,40 +1032,46 @@ a.chip:hover {
     text-align: left;
   }
   #contact {
-    padding: 70px 20px 70px;
+    padding: 48px 16px 64px;
   }
   .cth {
-    font-size: clamp(26px, 8vw, 38px);
-    line-height: 1.3;
+    font-size: clamp(26px, 7.8vw, 36px);
+    line-height: 1.2;
+    text-align: center;
     width: auto;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
   .cc {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 22px;
+    width: 136px;
+    height: 136px;
+    margin: 0 auto 24px;
   }
   .lk {
     width: 100%;
-    max-width: 300px;
-    margin-bottom: 12px;
+    max-width: none;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 0 7px 0 20px;
+    font-size: 15.5px;
+    background: rgba(10, 10, 10, 0.62);
   }
   .a-pa {
-    left: -30vw !important;
-    top: -6vw !important;
-    width: 160vw !important;
+    left: -25vw !important;
+    top: -8vw !important;
+    width: 150vw !important;
     height: auto !important;
+    opacity: 0.9;
   }
   .a-pb {
-    left: calc(50% - 75vw) !important;
-    top: -36vw !important;
-    width: 150vw !important;
+    left: calc(50% - 62vw) !important;
+    top: -18vw !important;
+    width: 124vw !important;
     height: auto !important;
   }
   .a-rg {
-    left: calc(50% - 73vw) !important;
-    top: -33.3vw !important;
-    width: 146vw !important;
+    left: calc(50% - 60vw) !important;
+    top: -15.5vw !important;
+    width: 120vw !important;
     height: auto !important;
   }
   .a-sk {
@@ -1041,18 +1094,22 @@ a.chip:hover {
   }
   .fm {
     width: auto;
-    margin-top: 26px;
-    padding: 24px 18px;
+    margin-top: 22px;
+    padding: 22px 16px;
+    border-radius: 28px;
   }
   .fh {
     font-size: 22px;
   }
-  .ctas {
-    flex-direction: column;
-    align-items: stretch;
+  .fm input:not([type="hidden"]),
+  .fm textarea {
+    font-size: 16px;
   }
   .fm .cta {
     width: 100%;
+    height: 46px;
+    padding: 0 5px 0 22px;
+    font-size: 16px;
   }
 }
 .navwrap { position: sticky; top: 0; height: 0; z-index: 30; }
@@ -1061,9 +1118,9 @@ a.chip:hover {
 html { scroll-padding-top: calc(84px * var(--z, 1) + env(safe-area-inset-top, 0px)); }
 @media (prefers-reduced-motion: reduce) { .navwrap .nav { transition: none; } }
 @media (max-width: 999px) {
-  .navwrap .nav { position: absolute; left: 14px; right: 14px; top: 12px; width: auto; margin: 0; }
-  .navwrap.scrolled .nav { top: 8px; }
-  #home { padding-top: 70px; }
+  .navwrap .nav { position: absolute; left: 16px; right: 16px; top: 12px; width: auto; height: 46px; border-radius: 23px; padding: 0 14px; font-size: clamp(11px, 3.1vw, 13.5px); margin: 0; background: rgba(10, 10, 10, 0.78); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+  .navwrap.scrolled .nav { top: 8px; background: rgba(10, 10, 10, 0.88); }
+  html { scroll-padding-top: calc(68px + env(safe-area-inset-top, 0px)); }
 }
 
 @media (min-width: 1000px) {
